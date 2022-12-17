@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { measures } from "../../utils/RingMeasures";
 import Background from "../assets/background.png";
 import Ring from "../assets/ring.png";
+import InnerRing from "../assets/inner-ring.png";
 
 function HasRing() {
   const navigate = useNavigate();
@@ -13,6 +14,8 @@ function HasRing() {
   const handleSliderChange = (e) => {
     setSize(e.target.value);
     setWidth(measures.get(e.target.value));
+
+    console.log(width);
   };
 
   return (
@@ -50,9 +53,38 @@ function HasRing() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            position: "relative",
           }}
         >
-          <img src={Ring} style={{ width: width }} />
+          <img src={Ring} style={{ width: width, marginTop: -80 }} />
+          <img
+            src={InnerRing}
+            style={{ width: width, position: "absolute", marginTop: -80 }}
+          />
+          <Typography
+            sx={{
+              position: "absolute",
+              bottom: 15,
+              textAlign: "center",
+              width: "90%",
+            }}
+          >
+            <b>Considere:</b>
+            <br />
+            <br />
+            <span
+              style={{
+                border: "3px solid #000",
+                padding: "2px 5px",
+                marginRight: 10,
+              }}
+            >
+              Aro do anel
+            </span>
+            <span style={{ border: "3px dashed green", padding: "2px 10px" }}>
+              Dedo
+            </span>
+          </Typography>
         </Box>
         <Grid container item justifyContent="center" xs={11}>
           <Typography fontWeight={600} fontSize={30}>

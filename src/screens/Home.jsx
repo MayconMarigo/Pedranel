@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Home() {
-  const [goBack, setGoBack] = useState(null);
+  const [goBack, setGoBack] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
