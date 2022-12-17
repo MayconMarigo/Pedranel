@@ -1,12 +1,9 @@
 import { Button, Grid, Slider, Typography } from "@mui/material";
 import { useState } from "react";
-import { useNavigate } from "react-router";
-import Background from "../assets/background.png";
 import { ringLength } from "../../utils/RingMeasures";
+import Background from "../assets/background.png";
 
 function NoRingInstructions() {
-  const navigate = useNavigate();
-
   const [value, setValue] = useState(0.3);
   const [measure, setMeasure] = useState(ringLength.get(0.3));
 
@@ -120,7 +117,7 @@ function NoRingInstructions() {
           </Typography>
         </Button>
         <Button
-          onClick={() => navigate(-1)}
+          onClick={() => (window.location.href = "/instrucoes")}
           sx={{
             width: "100%",
             maxWidth: { md: 600 },

@@ -1,12 +1,11 @@
 import { Button, Divider, Grid, Typography } from "@mui/material";
 import Background from "../assets/background.png";
 
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import InstructionsGif from "../assets/instructions.gif";
 
 function Instructions() {
-  const navigate = useNavigate();
   return (
     <Grid
       position="relative"
@@ -75,7 +74,7 @@ function Instructions() {
           alignItems={{ md: "center" }}
         >
           <Button
-            onClick={() => navigate("semanel")}
+            onClick={() => (window.location.href = "/semanel")}
             sx={{
               width: "100%",
               maxWidth: { md: 600 },
@@ -98,7 +97,7 @@ function Instructions() {
             </Typography>
           </Button>
           <Button
-            onClick={() => navigate(-1)}
+            onClick={() => (window.location.href = "/")}
             sx={{
               width: "100%",
               maxWidth: { md: 600 },
