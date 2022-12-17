@@ -13,6 +13,8 @@ function Home() {
     if (document.referrer) {
       localStorage.setItem("backURL", document.referrer);
       setGoBack(document.referrer);
+    } else {
+      localStorage.setItem("backURL", "");
     }
   }, [goBack]);
 

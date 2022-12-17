@@ -13,15 +13,15 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "instrucoes",
+    path: "/instrucoes",
     element: <Instructions />,
   },
   {
-    path: "instrucoes/semanel",
+    path: "/instrucoes/semanel",
     element: <NoRingInstructions />,
   },
   {
-    path: "medicaoanel",
+    path: "/medicaoanel",
     element: <HasRing />,
   },
 ]);
