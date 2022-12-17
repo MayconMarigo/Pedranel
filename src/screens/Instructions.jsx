@@ -1,7 +1,9 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Divider, Grid, Typography } from "@mui/material";
 import Background from "../assets/background.png";
 
 import { useNavigate } from "react-router-dom";
+
+import InstructionsGif from "../assets/instructions.gif";
 
 function Instructions() {
   const navigate = useNavigate();
@@ -31,8 +33,8 @@ function Instructions() {
         alignItems={{ md: "center" }}
       >
         <img
-          src="../../public/instructions.gif"
-          style={{ width: "90%", marginTop: 20, maxWidth: 600 }}
+          src={InstructionsGif}
+          style={{ width: "80%", marginTop: 20, maxWidth: 600 }}
         />
         <Grid
           container
@@ -51,6 +53,15 @@ function Instructions() {
             2 - Marque no fio o ponto onde se encontraram. <br />3 - Estenda o
             fio sobre uma régua e anote o valor do comprimento entre os dois
             pontos.
+          </Typography>
+          <Divider
+            sx={{ backgroundColor: "#000", width: "100%", marginY: 1 }}
+          />
+          <Typography>
+            Para mais informações de medição, acesse{" "}
+            <a href="https://pedranel.com/wp-content/uploads/2022/12/Pedranel-Guia-de-Tamanho-dos-Aneis-para-comprar-online-ourivesaria-2020-2022.pdf">
+              NOSSO PDF
+            </a>
           </Typography>
         </Grid>
         <Grid

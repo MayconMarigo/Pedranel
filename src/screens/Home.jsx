@@ -13,9 +13,6 @@ function Home() {
     if (document.referrer) {
       localStorage.setItem("backURL", document.referrer);
       setGoBack(document.referrer);
-    } else {
-      localStorage.setItem("backURL", "https://pedranel.com");
-      setGoBack("https://pedranel.com");
     }
   }, [goBack]);
 
@@ -110,7 +107,11 @@ function Home() {
           </Typography>
         </Button>
         <Button
-          onClick={() => (window.location.href = goBack)}
+          onClick={() => {
+            window.location.href = goBack.includes("ped")
+              ? goBack
+              : "https://pedranel.com";
+          }}
           sx={{
             width: "100%",
             maxWidth: { xs: "85%", md: 600 },

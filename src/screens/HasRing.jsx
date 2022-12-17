@@ -101,7 +101,13 @@ function HasRing() {
           alignItems="center"
         >
           <Button
-            onClick={() => navigate("semanel")}
+            onClick={() =>
+              (window.location.href = localStorage
+                .getItem("backURL")
+                .includes("ped")
+                ? localStorage.getItem("backURL")
+                : "https://pedranel.com")
+            }
             sx={{
               width: "100%",
               maxWidth: { md: 600 },

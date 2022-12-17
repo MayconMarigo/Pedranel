@@ -7,7 +7,7 @@ import { ringLength } from "../../utils/RingMeasures";
 function NoRingInstructions() {
   const navigate = useNavigate();
 
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0.3);
   const [measure, setMeasure] = useState(ringLength.get(0.3));
 
   const handleSliderChange = (e) => {
@@ -59,7 +59,7 @@ function NoRingInstructions() {
         sx={{ maxWidth: { md: 600 } }}
       >
         <Typography fontWeight={600} fontSize={22}>
-          {`${measure} cm`}
+          {`${measure} mm`}
         </Typography>
         <Slider
           sx={{
@@ -92,7 +92,11 @@ function NoRingInstructions() {
         </Typography>
         <Button
           onClick={() =>
-            (window.location.href = localStorage.getItem("backURL"))
+            (window.location.href = localStorage
+              .getItem("backURL")
+              .includes("ped")
+              ? localStorage.getItem("backURL")
+              : "https://pedranel.com")
           }
           sx={{
             width: "100%",
@@ -112,7 +116,7 @@ function NoRingInstructions() {
           }}
         >
           <Typography fontWeight={600} py={1}>
-            Voltar para o site Pedranel
+            Voltar para a página do produto
           </Typography>
         </Button>
         <Button
