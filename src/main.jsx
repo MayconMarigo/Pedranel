@@ -6,6 +6,7 @@ import HasRing from "./screens/HasRing";
 import Home from "./screens/Home";
 import Instructions from "./screens/Instructions";
 import NoRingInstructions from "./screens/NoRingInstructions";
+import { Router } from "react-router";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
