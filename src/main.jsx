@@ -1,22 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
 import HasRing from "./screens/HasRing";
 import Home from "./screens/Home";
 import Instructions from "./screens/Instructions";
 import NoRingInstructions from "./screens/NoRingInstructions";
-import { Router } from "react-router";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/instrucoes",
+    element: <Instructions />,
+  },
+  {
+    path: "/instrucoes/semanel",
+    element: <NoRingInstructions />,
+  },
+  {
+    path: "/medicaoanel",
+    element: <HasRing />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/medicaoanel" component={HasRing} />
-        <Route exact path="/instrucoes" component={Instructions} />
-        <Route exact path="/semanel" component={NoRingInstructions} />
-      </Switch>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

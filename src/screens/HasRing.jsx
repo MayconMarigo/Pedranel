@@ -1,13 +1,13 @@
 import { Box, Button, Grid, Slider, Typography } from "@mui/material";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { measures } from "../../utils/RingMeasures";
 import Background from "../assets/background.png";
-import InnerRing from "../assets/inner-ring.png";
 import Ring from "../assets/ring.png";
+import InnerRing from "../assets/inner-ring.png";
 
 function HasRing() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [size, setSize] = useState(0.3);
   const [width, setWidth] = useState(measures.get(0.3));
 
@@ -162,7 +162,7 @@ function HasRing() {
             </Typography>
           </Button>
           <Button
-            onClick={() => (window.location.href = "/")}
+            onClick={() => navigate(-1)}
             sx={{
               width: "100%",
               maxWidth: { md: 600 },

@@ -1,13 +1,13 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
-import Background from "../assets/background.png";
 import Logo from "../assets/logo.png";
+import Background from "../assets/background.png";
 
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 
 function Home() {
   const [goBack, setGoBack] = useState("");
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (document.referrer) {
@@ -61,7 +61,7 @@ function Home() {
         mb={5}
       >
         <Button
-          onClick={() => (window.location.href = "/medicaoanel")}
+          onClick={() => navigate("medicaoanel")}
           sx={{
             width: "100%",
             maxWidth: { xs: "85%", md: 600 },
@@ -85,7 +85,7 @@ function Home() {
           </Typography>
         </Button>
         <Button
-          onClick={() => (window.location.href = "/instrucoes")}
+          onClick={() => navigate("instrucoes")}
           sx={{
             width: "100%",
             maxWidth: { xs: "85%", md: 600 },
