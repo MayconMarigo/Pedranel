@@ -110,9 +110,9 @@ function Home() {
         </Button>
         <Button
           onClick={() => {
-            window.location.href = goBack.includes("ped")
+            goBack.includes("ped")
               ? history.go(-1)
-              : "https://pedranel.com";
+              : (window.location.href = "https://pedranel.com");
           }}
           sx={{
             width: "100%",

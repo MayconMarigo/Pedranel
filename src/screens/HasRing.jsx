@@ -132,11 +132,9 @@ function HasRing() {
         >
           <Button
             onClick={() =>
-              (window.location.href = localStorage
-                .getItem("backURL")
-                .includes("ped")
-                ? window.history.go(-2)
-                : "https://pedranel.com")
+              localStorage.getItem("backURL").includes("ped")
+                ? history.go(-2)
+                : (window.location.href = "https://pedranel.com")
             }
             sx={{
               width: "100%",

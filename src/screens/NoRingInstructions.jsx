@@ -92,11 +92,9 @@ function NoRingInstructions() {
         </Typography>
         <Button
           onClick={() =>
-            (window.location.href = localStorage
-              .getItem("backURL")
-              .includes("ped")
+            localStorage.getItem("backURL").includes("ped")
               ? history.go(-3)
-              : "https://pedranel.com")
+              : (window.location.href = "https://pedranel.com")
           }
           sx={{
             width: "100%",
