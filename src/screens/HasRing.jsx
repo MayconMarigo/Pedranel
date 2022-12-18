@@ -14,8 +14,6 @@ function HasRing() {
   const handleSliderChange = (e) => {
     setSize(e.target.value);
     setWidth(measures.get(e.target.value));
-
-    console.log(width);
   };
 
   return (
@@ -137,7 +135,7 @@ function HasRing() {
               (window.location.href = localStorage
                 .getItem("backURL")
                 .includes("ped")
-                ? localStorage.getItem("backURL")
+                ? window.history.go(-2)
                 : "https://pedranel.com")
             }
             sx={{

@@ -59,7 +59,7 @@ function NoRingInstructions() {
         sx={{ maxWidth: { md: 600 } }}
       >
         <Typography fontWeight={600} fontSize={22}>
-          {`${measure} mm`}
+          {`${((measure * Math.PI) / 10).toFixed(3).replaceAll(".", ",")} cm`}
         </Typography>
         <Slider
           sx={{
@@ -95,7 +95,7 @@ function NoRingInstructions() {
             (window.location.href = localStorage
               .getItem("backURL")
               .includes("ped")
-              ? localStorage.getItem("backURL")
+              ? history.go(-3)
               : "https://pedranel.com")
           }
           sx={{

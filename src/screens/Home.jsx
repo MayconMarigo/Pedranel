@@ -111,7 +111,7 @@ function Home() {
         <Button
           onClick={() => {
             window.location.href = goBack.includes("ped")
-              ? goBack
+              ? history.go(-1)
               : "https://pedranel.com";
           }}
           sx={{
